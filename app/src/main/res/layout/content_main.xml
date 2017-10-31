@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/primary_dark"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.android.firedata.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:keepScreenOn="true"
+    android:id="@+id/main">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.example.android.firedata.MainActivity"
+        tools:showIn="@layout/activity_main"
+        android:background="@color/primary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="DATA"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <!-- the first item in the list -->
+
+
+        <LinearLayout
+            android:id="@+id/temperature_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/primary_dark"
+                android:padding="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingTop="8dp"
+                android:text="TEMPERATURE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="start"
+                    android:background="@drawable/textview_design_circle"
+                    android:gravity="center"
+                    android:text=" C° "
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:id="@+id/temp_display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="80dp"
+                    android:paddingRight="40dp"
+                    android:textSize="45sp"
+                    android:text="75" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/primary_dark"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/accelerationitemtextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:paddingTop="8dp"
+                android:text="ACCELERATION"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/accelerationitemcontentview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/textview_design_circle"
+                    android:gravity="center"
+                    android:text=" m/s² "
+                    android:textSize="35sp" />
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:columnCount="3"
+                    android:rowCount="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="X Acc:"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Y Acc:"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Z Acc:"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/x_accel_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="18sp"
+                        tools:text="Data"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/y_accel_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="18sp"
+                        tools:text="Data"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/z_accel_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="18sp"
+                        tools:text="Data"
+
+                        />
+
+
+                </GridLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/gyroscopecontentview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/primary_dark"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:paddingTop="8dp"
+                    android:text="GYROSCOPE"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/textview_design_circle"
+                        android:gravity="center"
+
+                        android:text=" rad/s "
+                        android:textSize="35sp" />
+
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:columnCount="3"
+                        android:rowCount="2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="X Dev:"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Y Dev:"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Z Dev:"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/x_gyro_display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:textSize="18sp"
+                            tools:text="Data"
+
+
+                            />
+
+                        <TextView
+                            android:id="@+id/y_gyro_display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:textSize="18sp"
+                            tools:text="Data"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/z_gyro_display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:textSize="18sp"
+                            tools:text="Data"
+
+                            />
+
+
+                    </GridLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/relativehumiditycontentdisplay">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/primary_dark"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:paddingTop="8dp"
+                    android:text="RELATIVE HUMIDITY"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="start"
+                        android:background="@drawable/textview_design_circle"
+                        android:gravity="center"
+                        android:text=" % "
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/humidity_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="80dp"
+                        android:textSize="45sp"
+                        android:paddingRight="40dp"
+
+                        tools:text="75" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pressurecontentdisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/primary_dark"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:paddingTop="8dp"
+                    android:text="PRESSURE"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="start"
+                        android:background="@drawable/textview_design_circle"
+                        android:gravity="center"
+                        android:text=" hPa "
+
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/pressure_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="80dp"
+                        android:textSize="45sp"
+                        android:paddingRight="40dp"
+
+                        tools:text="75" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lightcontentdisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/primary_dark"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:paddingTop="8dp"
+                    android:text="LIGHT"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="start"
+                        android:background="@drawable/textview_design_circle"
+                        android:gravity="center"
+
+                        android:text=" lx "
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/light_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="80dp"
+                        android:textSize="45sp"
+                        android:paddingRight="40dp"
+
+                        tools:text="75" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/magnetcontentdisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/primary_dark"
+                        android:padding="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingTop="8dp"
+                        android:text="MAGNETIC FIELD"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/textview_design_circle"
+                            android:gravity="center"
+
+                            android:text=" μT "
+                            android:textSize="35sp" />
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:columnCount="3"
+                            android:rowCount="2">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="X Str:"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="Y Str:"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+
+
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="Z Str:"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/x_mag_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:textSize="18sp"
+                                tools:text="banana"
+
+
+                                />
+
+                            <TextView
+                                android:id="@+id/y_mag_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:textSize="18sp"
+                                tools:text="banana"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/z_mag_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:textSize="18sp"
+                                tools:text="banana"
+
+                                />
+
+
+                        </GridLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
